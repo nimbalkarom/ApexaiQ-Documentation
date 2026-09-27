@@ -1,0 +1,4 @@
+# Enterprise File Organizer Requirements
+# The core application relies exclusively on the Python standard library (Python 3.11+).
+# Testing and development tooling:
+pytest>=8.0.0

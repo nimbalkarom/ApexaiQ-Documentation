@@ -1,0 +1,67 @@
+{
+  "conflict_strategy": "rename_auto",
+  "categories": {
+    "Documents": [".pdf", ".doc", ".docx"],
+    "Images": [".jpg", ".jpeg", ".png", ".gif"],
+    "Videos": [".mp4", ".mkv", ".mov"],
+    "Archives": [".zip", ".tar.gz", ".7z"],
+    "Code": [".py", ".java", ".cpp", ".js", ".html"],
+    "CAD": [".dwg", ".dxf", ".step"]
+  },
+  "rules": [
+    {
+      "name": "Enterprise Invoice Regex",
+      "type": "regex",
+      "pattern": "^INV-\\d{4}-\\d+\\.pdf$",
+      "destination": "Finance/Invoices"
+    },
+    {
+      "name": "Quarterly Financial Reports",
+      "type": "regex",
+      "pattern": "^Q[1-4]_report.*\\.(xlsx|pdf)$",
+      "destination": "Finance/Reports"
+    },
+    {
+      "name": "HR Employee Documents",
+      "type": "filename",
+      "pattern": "employee_",
+      "destination": "HR/Documents"
+    },
+    {
+      "name": "Engineering CAD Drawings",
+      "type": "filename",
+      "pattern": "cad_drawing",
+      "destination": "Engineering/Drawings"
+    },
+    {
+      "name": "Student Course Notes",
+      "type": "filename",
+      "pattern": "notes",
+      "destination": "Academics/Notes"
+    },
+    {
+      "name": "Student Homework Assignments",
+      "type": "filename",
+      "pattern": "assignment",
+      "destination": "Academics/Assignments"
+    },
+    {
+      "name": "Large Virtual Disks & ISOs",
+      "type": "size",
+      "min_size": "2GB",
+      "destination": "Storage/Heavy_Files"
+    },
+    {
+      "name": "Recent 30 Days Working Files",
+      "type": "date",
+      "modified_within_days": 30,
+      "destination": "Recent_Files"
+    },
+    {
+      "name": "Historical Cold Archive",
+      "type": "date",
+      "modified_older_than_days": 730,
+      "destination": "Cold_Archive"
+    }
+  ]
+}

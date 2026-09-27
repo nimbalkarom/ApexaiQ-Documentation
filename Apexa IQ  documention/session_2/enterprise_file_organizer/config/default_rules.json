@@ -1,0 +1,55 @@
+{
+  "conflict_strategy": "rename_auto",
+  "categories": {
+    "Documents": [".pdf", ".doc", ".docx", ".odt", ".rtf"],
+    "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp", ".tiff"],
+    "Videos": [".mp4", ".mkv", ".mov", ".avi", ".wmv", ".flv", ".webm"],
+    "Audio": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".wma", ".m4a"],
+    "Archives": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz"],
+    "Code": [".py", ".java", ".c", ".cpp", ".h", ".hpp", ".cs", ".js", ".ts", ".html", ".css", ".go", ".rs", ".php", ".rb"],
+    "Data": [".csv", ".json", ".xml", ".yaml", ".yml", ".sql", ".sqlite", ".db"],
+    "Spreadsheets": [".xlsx", ".xls", ".ods"],
+    "Presentations": [".pptx", ".ppt", ".odp"],
+    "Text": [".txt", ".md", ".log"],
+    "Executables": [".exe", ".msi", ".bin", ".sh", ".bat", ".cmd"],
+    "Others": []
+  },
+  "rules": [
+    {
+      "name": "Invoices Regex Rule",
+      "type": "regex",
+      "pattern": "^invoice_\\d+\\.(pdf|docx|xlsx)$",
+      "destination": "Finance/Invoices"
+    },
+    {
+      "name": "Assignments Pattern Rule",
+      "type": "filename",
+      "pattern": "assignment",
+      "destination": "Education/Assignments"
+    },
+    {
+      "name": "Certificates Pattern Rule",
+      "type": "filename",
+      "pattern": "certificate",
+      "destination": "Certificates"
+    },
+    {
+      "name": "Resume Pattern Rule",
+      "type": "filename",
+      "pattern": "resume",
+      "destination": "Career/Resumes"
+    },
+    {
+      "name": "Large Files Size Rule",
+      "type": "size",
+      "min_size": "500MB",
+      "destination": "Large_Files"
+    },
+    {
+      "name": "Archive Old Files Rule",
+      "type": "date",
+      "modified_older_than_days": 365,
+      "destination": "Archive/Old"
+    }
+  ]
+}
